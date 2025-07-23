@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Datang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      height: 100vh;
+      background: url('https://i.pinimg.com/1200x/e5/45/d2/e545d2a2d0ca7b7d11687842275f9c52.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .overlay {
+      background: rgba(0,0,0,0.5);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .welcome-container {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+
+    .masuk-button {
+      background-color: #fff;
+      color: #a4001a;
+      font-weight: bold;
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .masuk-button:hover {
+      background-color: #a4001a;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      animation: fall 5s infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="welcome-container">
+    <h1>Selamat Datang!</h1>
+    <p> 17 Agustus Sidoluhur XII</p>
+    <a href="dasboard 17.html" class="masuk-button">MASUK</a>
+  </div>
+
+  <!-- Confetti -->
+  <script>
+    for (let i = 0; i < 100; i++) {
+      let confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.backgroundColor = ["#ff0000", "#ffffff", "#f1c40f", "#3498db"][Math.floor(Math.random() * 4)];
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      confetti.style.opacity = Math.random();
+      confetti.style.width = confetti.style.height = Math.random() * 8 + 4 + "px";
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
